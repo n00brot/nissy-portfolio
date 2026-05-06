@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nissy.dev — websites that work</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <nav>
+      <span class="logo">nissy.dev</span>
+      <a href="#contact" class="nav-cta">get a site</a>
+    </nav>
+    <div class="hero-content">
+      <h1>Fast websites.<br/>Real results.</h1>
+      <p>I build clean, modern websites for businesses — delivered in 3–5 days.</p>
+      <div class="hero-badges">
+        <span class="badge">3–5 day delivery</span>
+        <span class="badge">worldwide clients</span>
+        <span class="badge">fixed pricing</span>
+      </div>
+      <a href="#customiser" class="btn-primary">see what your site could look like</a>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <h2>What I build</h2>
+    <div class="cards">
+      <div class="card">
+        <p class="card-tag">starter</p>
+        <h3>One-pager</h3>
+        <p>A single clean page — perfect for getting online fast.</p>
+        <ul>
+          <li>Hero + about + contact</li>
+          <li>Mobile friendly</li>
+          <li>Live in 3 days</li>
+        </ul>
+      </div>
+      <div class="card featured">
+        <p class="card-tag">most popular</p>
+        <h3>Landing page</h3>
+        <p>A full landing page built to convert visitors into customers.</p>
+        <ul>
+          <li>Custom sections</li>
+          <li>Contact form</li>
+          <li>Live in 5 days</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card-tag">advanced</p>
+        <h3>Landing page + extras</h3>
+        <p>Everything in landing page plus booking, gallery, or blog.</p>
+        <ul>
+          <li>Extra functionality</li>
+          <li>Email integration</li>
+          <li>Live in 7 days</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <h2>Recent work</h2>
+    <div class="filter-bar">
+      <button class="filter active" onclick="filterWork('all')">all</button>
+      <button class="filter" onclick="filterWork('restaurant')">restaurant</button>
+      <button class="filter" onclick="filterWork('gym')">gym</button>
+      <button class="filter" onclick="filterWork('freelancer')">freelancer</button>
+      <button class="filter" onclick="filterWork('shop')">shop</button>
+    </div>
+    <div class="work-grid" id="work-grid">
+      <div class="work-card" data-type="restaurant">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="browser-url">pristina-cafe.vercel.app</span>
+          </div>
+          <div class="browser-preview" style="background:#f5f0eb;">
+            <p class="preview-label">Pristina Café</p>
+          </div>
+        </div>
+        <p class="work-title">Pristina Café</p>
+        <p class="work-type">restaurant</p>
+      </div>
+      <div class="work-card" data-type="freelancer">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="browser-url">markdesign.vercel.app</span>
+          </div>
+          <div class="browser-preview" style="background:#0f0f0f;">
+            <p class="preview-label" style="color:#fff;">Mark — Designer</p>
+          </div>
+        </div>
+        <p class="work-title">Mark — Designer</p>
+        <p class="work-type">freelancer</p>
+      </div>
+      <div class="work-card" data-type="gym">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="browser-url">ironfit-gym.vercel.app</span>
+          </div>
+          <div class="browser-preview" style="background:#1a1a2e;">
+            <p class="preview-label" style="color:#e94560;">IronFit Gym</p>
+          </div>
+        </div>
+        <p class="work-title">IronFit Gym</p>
+        <p class="work-type">gym</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMISER -->
+  <section class="customiser" id="customiser">
+    <h2>Pick your style</h2>
+    <p class="section-sub">See how your site could feel — then send me your choices directly.</p>
+    <div class="style-picker">
+      <button class="style-btn active" onclick="setStyle('minimal')">minimal</button>
+      <button class="style-btn" onclick="setStyle('bold')">bold</button>
+      <button class="style-btn" onclick="setStyle('elegant')">elegant</button>
+    </div>
+    <div class="palette-picker">
+      <button class="palette-btn active" data-palette="blue" onclick="setPalette('blue')" style="background:#2563eb;"></button>
+      <button class="palette-btn" data-palette="green" onclick="setPalette('green')" style="background:#16a34a;"></button>
+      <button class="palette-btn" data-palette="rose" onclick="setPalette('rose')" style="background:#e11d48;"></button>
+      <button class="palette-btn" data-palette="amber" onclick="setPalette('amber')" style="background:#d97706;"></button>
+    </div>
+    <div class="preview-box" id="preview-box">
+      <div class="preview-inner" id="preview-inner">
+        <h3 id="preview-title">Your business name</h3>
+        <p id="preview-sub">A short line about what you do.</p>
+        <button class="preview-cta" id="preview-cta">contact us</button>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="sendVibe()">this is my vibe — contact nissy ↓</button>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Let's build yours</h2>
+    <p class="section-sub">Tell me about your business and I'll get back to you within 24 hours.</p>
+    <div class="form-wrap">
+      <input type="text" id="f-name" placeholder="your name" />
+      <input type="text" id="f-business" placeholder="business name & type" />
+      <input type="email" id="f-email" placeholder="your email" />
+      <textarea id="f-message" placeholder="tell me about your project" rows="4"></textarea>
+      <input type="text" id="f-style" placeholder="style preference (auto-filled if you used the picker)" readonly />
+      <button class="btn-primary" onclick="submitForm()">send message</button>
+      <p class="form-note" id="form-note"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>nissy.dev — fast websites for businesses worldwide</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
