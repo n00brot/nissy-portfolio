@@ -68,15 +68,43 @@ function sendVibe() {
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
 }
 
-function submitForm() {
-  const name = document.getElementById('f-name').value.trim()
-  const email = document.getElementById('f-email').value.trim()
-  const note = document.getElementById('form-note')
-  if (!name || !email) {
-    note.textContent = 'please fill in your name and email.'
-    note.style.color = '#e11d48'
-    return
+async function submitForm() {
+    const name = document.getElementById('f-name').value.trim()
+    const business = document.getElementById('f-business').value.trim()
+    const email = document.getElementById('f-email').value.trim()
+    const message = document.getElementById('f-message').value.trim()
+    const style = document.getElementById('f-style').value
+    const note = document.getElementById('form-note')
+    const btn = document.querySelector('.contact .btn-primary')
+  
+    if (!name || !email) {
+      note.textContent = 'please fill in your name and email.'
+      note.style.color = '#e11d48'
+      return
+    }
+  
+    btn.textContent = 'sending...'
+    btn.disabled = true
+  
+    try {
+      const res = await fetch('https://formspree.io/f/mjglrjye', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, business, email, message, style })
+      })
+  
+      if (res.ok) {
+        note.textContent = "message sent — i'll be in touch within 24 hours."
+        note.style.color = '#16a34a'
+        btn.textContent = 'sent'
+        document.querySelectorAll('.form-wrap input, .form-wrap textarea').forEach(el => el.value = '')
+      } else {
+        throw new Error()
+      }
+    } catch {
+      note.textContent = 'something went wrong — email me directly at hello@nissy.dev'
+      note.style.color = '#e11d48'
+      btn.textContent = 'send message'
+      btn.disabled = false
+    }
   }
-  note.textContent = 'message sent — i\'ll be in touch within 24 hours.'
-  note.style.color = '#16a34a'
-}
